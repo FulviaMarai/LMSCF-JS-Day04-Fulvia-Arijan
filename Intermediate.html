@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Intermediate exercise</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<!-- Create three objects of type hotel. Each of them shares some properties and methods. The user should be able to insert a number of nights for each hotel and get back results, whether the hotel is available or not (for some number of nights). For each hotel generate random integers from 1-10 that store available nights. If the hotel is available, provide a button labeled "I'll reserve" otherwise provide a message with text "Sorry, no free room for <number_of_nights> nights".
+
+Try to style the program with the colors #003580, #FFFFFF and #E9F0FA. -->
+
+<h1>Exercise: Hotels</h1>
+
+<p>Please, choose your hotel and the number of nights you desire to stay</p>
+<br>
+<input type="radio" id="ritzHotel" name="hotel" value="hotel">The Ritz<br>
+<input type="radio" id="twentyHotel" name="hotel" value="hotel"> 25 Hotel<br>
+<input type="radio" id="flemHotel" name="hotel" value="hotel"> Flemings Hotel<br>
+<br>
+ <br/>
+     <!--  <select id="nightsRequired" >                                       
+        <option value=1>1</option>
+        <option value=2>2</option>
+        <option value=3>3</option>
+        <option value=4>4</option>
+        <option value=5>5</option>
+        <option value=6>6</option>
+        <option value=7>7</option>
+        <option value=8>8</option>
+        <option value=9>9</option>
+        <option value=10>10</option>
+      </select> -->
+
+ <input type="text" id="nightsRequired" value="">
+
+<br>
+<br>
+<input type="submit" id="button" name="submit">
+<br>
+<div id="message"></div>
+
+
+<script>
+
+
+	function HotelConstructor(name, freeroom) {
+       this.name = name;
+       this.free = freeroom;
+       this.night = Math.floor(Math.random() * 10);
+       this.availability = function() {
+               return this.free - this.night;
+           };
+
+var ritzHotel = new HotelConstructor('Ritz', 10);
+var twentyHotel = new HotelConstructor('25 Hotel', 10);
+var flemHotel = new HotelConstructor('Flemings', 10);      
+
+          };
+
+	function Check() {
+
+	// var e = document.getElementById("nightsRequired");
+	// var userReq = e.options[e.selectedIndex].value;
+
+var x = document.getElementById("ritzHotel");
+var y = document.getElementById("twentyHotel");
+var z = document.getElementById("flemHotel");
+
+if (x!=)
+
+
+		var userReq = document.getElementById("nightsRequired").value;
+
+		if (userReq >= this.availability) {
+
+			var badAnswer = "<br> Sorry, no free room for " +  userReq + " nights";
+		document.getElementById("message").innerHTML = badAnswer; 
+
+             } else {
+
+			var goodAnswer = "Congratulation!There is enought room!";
+			document.getElementById("message").innerHTML = goodAnswer;
+			}
+       };     
+
+	var elementNode = document.getElementById("button");
+      elementNode.onclick = Check;
+
+
+</script>
+
+</body>
+</html>
