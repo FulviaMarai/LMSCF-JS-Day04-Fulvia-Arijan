@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Basic exercise 1</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<h1> Your age calculator</h1>
+<p> Please, write down your birth year</p>
+<input type="text" id="form" name="Your birth year" value="">
+<input type="submit" id="button" name="send">
+<br>
+<div id="message"></div>
+
+<script>
+	
+// Create a function that uses your birth year as an argument and calculates your current age, use the Date object.
+
+function age(){
+
+var y = document.getElementById("form").value;	
+var d = new Date();
+var n = d.getFullYear();
+var z = n - y;
+
+document.getElementById("message").innerHTML = "You are " + z + " years old";
+}
+
+var elementNode = document.getElementById("button");
+      elementNode.onclick = age;
+
+</script>
+
+</body>
+</html>
