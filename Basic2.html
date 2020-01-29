@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Basic exercise 2</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<!-- Create a function that accepts two parameters. 1st parameter is a string and the 2nd is a number of characters that should be shortened by cutting off the string from left to right.
+
+e.g. If we pass the following arguments in the function 1st argument = "I am a hero from World of Warcraft" and 2nd argument = "12", we should get the string "I am a hero" -->
+
+<h1> Truncate exercise </h1>
+<p> Please, imput a phrase of whatever lenght you like and a number </p>
+<p> Here goes the phrase </p>
+<input type="text" id="string" name="Phrase" value="">
+<br>
+<p>Here goes the number</p>
+<input type="text" id="number" name="Number" value="">
+<br>
+<br>
+<input type="submit" id="button" name="send">
+<br>
+<br>
+<div id="message"></div>
+
+
+<script>
+
+	function truncate(){
+
+	var str = document.getElementById("string").value;	
+	var nbr = document.getElementById("number").value;	
+
+	var shortPhrase=(str.substring(0,nbr));
+
+	document.getElementById("message").innerHTML = shortPhrase;
+}
+
+var elementNode = document.getElementById("button");
+      elementNode.onclick = truncate;
+
+</script>
+
+</body>
+</html>
